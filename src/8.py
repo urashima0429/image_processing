@@ -13,7 +13,7 @@ img = img[:h*SIZE, :w*SIZE, :].copy()
 for i in range(h):
     for j in range(w):
         img[i*SIZE:(i+1)*SIZE, j*SIZE:(j+1)*SIZE, :] =\
-            np.average(img[i*SIZE:(i+1)*SIZE, j*SIZE:(j+1)*SIZE, :], (0, 1))
+            np.max(img[i*SIZE:(i+1)*SIZE, j*SIZE:(j+1)*SIZE, :], (0, 1))
 
 cv2.imwrite("out.jpg", img)
 cv2.imshow("result", img)
